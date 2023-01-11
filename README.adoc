@@ -1,0 +1,28 @@
+# Apache Derby Docker-Image
+
+Runs Derby in a docker container. 
+
+## Used versions
+
+* Derby: 10.16.1.1
+* Base-Image: eclipse-temurin:19-jre-alpine
+
+
+## Configurations
+
+* Exposes port **1527**
+* Data-Folder can be mounted on /data, otherwise data will be lost on shutdown
+
+## Running:
+
+Linux:
+
+```
+sudo docker run -d -p 1527:1527 -v $(pwd)/db:/data --name derby -t aisge/derby
+```
+
+Windows:
+```
+docker run -d -p 1527:1527 -v ${PWD}/db:/data --name derby -t aisge/derby
+```
+
